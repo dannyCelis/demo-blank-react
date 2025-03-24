@@ -15,8 +15,10 @@ phases:
 
   post_build:
     commands:
-      - echo Syncing build folder content to S3...
-      - aws s3 sync build/ s3://test.nfs-company.com --delete --exact-timestamps
+      - echo "Checking if build folder exists..."
+      - ls -la build/
+      # - echo Syncing build folder content to S3...
+      # - aws s3 sync build/ s3://test.nfs-company.com --delete --exact-timestamps
       # - echo Invalidating CloudFront cache...
       # - aws cloudfront create-invalidation --distribution-id YOUR_CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
 
