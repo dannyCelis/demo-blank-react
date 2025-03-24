@@ -7,8 +7,8 @@ phases:
     commands:
       - echo "Installing dependencies..."
       - npm install
-      - echo "Checking node_modules existence..."
-      - ls -la node_modules | head -n 10
+      # - echo "Checking node_modules existence..."
+      # - ls -la node_modules | head -n 10
   
   build:
     commands:
@@ -29,7 +29,7 @@ phases:
   post_build:
     commands:
       - echo "Checking if build folder exists..."
-      - ls -la build/
+      - ls -la dist/
       # - echo Syncing build folder content to S3...
       # - aws s3 sync build/ s3://test.nfs-company.com --delete --exact-timestamps
       # - echo Invalidating CloudFront cache...
