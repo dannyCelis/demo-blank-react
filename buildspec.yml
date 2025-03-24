@@ -5,13 +5,26 @@ phases:
     runtime-versions:
       nodejs: 22  # Use the Node.js version your app requires
     commands:
-      - echo Installing dependencies...
-      - npm ci
+      - echo "Installing dependencies..."
+      - npm install
+      - echo "Checking node_modules existence..."
+      - ls -la node_modules | head -n 10
   
   build:
-    commands:
-      - echo Building the React app...
-      - npm run build
+  commands:
+    - echo "Node version:"
+    - node -v
+    - echo "NPM version:"
+    - npm -v
+    - echo "Checking current directory:"
+    - pwd
+    - echo "Listing files before build:"
+    - ls -la
+    - echo "Building the React app..."
+    - npm run build
+    - echo "Listing files after build:"
+    - ls -la
+
 
   post_build:
     commands:
