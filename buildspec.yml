@@ -30,8 +30,8 @@ phases:
     commands:
       - echo "Checking if build folder exists..."
       - ls -la dist/
-      - echo Syncing dist folder content to S3...
-      - aws s3 sync dist/ s3://test.nfs-company.com --delete --exact-timestamps
+      # - echo Syncing dist folder content to S3...
+      # - aws s3 sync dist/ s3://test.nfs-company.com --delete --exact-timestamps
       # - echo Invalidating CloudFront cache...
       # - aws cloudfront create-invalidation --distribution-id YOUR_CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
 
